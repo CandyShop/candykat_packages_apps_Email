@@ -376,14 +376,11 @@ public class SSLSocketFactory implements LayeredSocketFactory {
         // We don't want to verify the hostname from the previous socket here (we must call
         // setHostname in order to proper get SNI working), so just create a new ssl socket
         // based in the previous socket
-<<<<<<< HEAD
         SSLSocket sslSocket = (SSLSocket) socketfactory.createSocket(
               socket.getInetAddress(),
               port
         );
-=======
         SSLSocket sslSocket = (SSLSocket) socketfactory.createSocket(host, port);
->>>>>>> 5f1680d... email: add support for Server Name Indication (SNI)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             // Turn on Server Name Indication (SNI)
